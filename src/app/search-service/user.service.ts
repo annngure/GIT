@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {User} from '../user';
 import {Repository} from '../repository';
 import {HttpClient} from '@angular/common/http';
-import {environment} from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,16 +16,15 @@ export class UserService {
    }
    userSearch(nameSearch:String){
      interface Response{
-       url:string;
+       name:string;
        login:string;
-       html_url:string;
-       location:string;
+       avatar_url:string;
        public_repos:number;
+       html_url:string;
+       created_at:Date;
        followers:number;
        following:number;
-       avatar_url:string;
-       bio:string;
-       created_at:Date;
+     
 
      }
 
