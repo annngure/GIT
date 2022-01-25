@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
       followers:number;
       following:number;
     }
-    this.http.get<ApiResponse>("https://github.com/annngure").subscribe((data:any)=>{
+    this.http.get<ApiResponse>("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").subscribe((data:any)=>{
       //succesful ApI request
       this.users= new User( data.name,data.login,data.avatar_url,data.public_repos,data.html_url,data.created_at,data.followers,data.following)
     })
