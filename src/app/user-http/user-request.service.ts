@@ -28,7 +28,7 @@ export class UserRequestService {
 
      }
      let promise=new Promise<void>((resolve,reject)=>{
-       this.http.get<ApiResponse>(environment.apikey).toPromise().then(response=>{
+       this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
          this.users.name = response!.name
          this.users.login =response!.login
         

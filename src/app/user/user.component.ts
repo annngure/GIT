@@ -3,6 +3,7 @@ import { Repository } from '../repository';
 import {User} from '../user';
 import { UserService } from '../search-service/user.service';
 import { HttpClient } from '@angular/common/http';
+import { UserRequestService } from '../user-http/user-request.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,10 +12,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserComponent implements OnInit {
   userName='ann';
-  users: User | undefined;
-  repos: Repository|undefined;
+  users!: User;
+  repos!: Repository;
 
-  constructor(public searchservice:UserService,private repoService:UserService,private http:HttpClient) {
+  constructor(public searchservice:UserService,private repoService:UserService,private http:HttpClient,private userservice:UserRequestService) {
     
   }
      
@@ -30,7 +31,7 @@ export class UserComponent implements OnInit {
       followers:number;
       following:number;
     }
-    this.http.get<ApiResponse>("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").subscribe((data:any)=>{
+    this.http.get<ApiResponse>("https://api.github.com/").subscribe((data:any)=>{
       //succesful ApI request
       this.users= new User( data.name,data.login,data.avatar_url,data.public_repos,data.html_url,data.created_at,data.followers,data.following)
     })
