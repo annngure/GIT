@@ -5,3 +5,13 @@
     padding-left: 500px;
     padding-bottom: 20px;
 }
+#username{
+    border-radius: 20px;
+    border-color: black;
+    height: 20px;
+}
+.btn{
+    background-color: aqua;
+    height: 40px;
+    width: 100px;
+}
