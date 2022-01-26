@@ -1,7 +1,7 @@
 
 <div class="container">
     <h1 class="head">GIT-SEARCH.</h1>
-    <form #searchForm="ngForm" (ngSubmit)="getUsername()">
+    <form  class="form" #searchForm="ngForm" (ngSubmit)="getUsername()">
         <label for="username"> USERNAME. </label>
         <input id="username" name="username" #name="ngModel" [(ngModel)]="username" required>
         <br>
