@@ -1,1 +1,16 @@
-<p>repository works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table">
+                <!-- <tr *ngFor='let repositories of repos '></tr> -->
+                <a href="{{repos.html_url}}">{{repos.name}}</a>
+              <p>
+                 Date Created:{{repos.created_at}} 
+              </p>
+              <p>
+                  Description:{{repos.description}}
+              </p>
+            </table>
+        </div>
+    </div>
+</div>
