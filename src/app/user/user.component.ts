@@ -11,30 +11,19 @@ import { UserRequestService } from '../user-http/user-request.service';
   providers:[UserService]
 })
 export class UserComponent implements OnInit {
-  userName='ann';
+  username!: string;
   users!: User;
   repos!: Repository;
+  userService!: UserService;
 
-  constructor(public searchservice:UserService,private repoService:UserService,private http:HttpClient,private userservice:UserRequestService) {
-    
+  constructor(searchService:UserService) {
+    this.userService=searchService;
   }
      
 
   ngOnInit() {
-    interface ApiResponse{
-      name:string;
-      login: string;
-      avatar_url:string;
-      public_repos:number;
-      html_url: string;
-      created_at:Date;
-      followers:number;
-      following:number;
-    }
-    this.http.get<ApiResponse>("https://api.github.com/").subscribe((data:any)=>{
-      //succesful ApI request
-      this.users= new User( data.name,data.login,data.avatar_url,data.public_repos,data.html_url,data.created_at,data.followers,data.following)
-    })
+    this.userService.userSearch(this.username)
+    this.users=this.userService.findUser
   }
 
 }

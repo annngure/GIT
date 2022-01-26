@@ -1,11 +1,9 @@
 <div class="container">
     <!-- <ng-progress></ng-progress> -->
-
-        <h1 >GIT-SEARCH.</h1>   
-  <br>
+   <h2 class="head">Users.</h2>
   <div class="row">
       <div class="col-md-6">
-          <!-- <div *ngFor='let users of User; let i=index'> -->
+           <!-- <div *ngFor='let users of users; let i=index'> -->
         
           <!-- </div> -->
 
@@ -25,7 +23,7 @@
    </tr>
     
    <tr>
-       <th scope ="row">Repositories:</th>
+       <th scope ="row">Date:</th>
        <td>{{users.created_at}}</td>
    </tr>
 
@@ -41,31 +39,32 @@
     </table> 
 
    <div class="row">
-       <div class="col-md-5">
+       <div class="col-md-6">
            <img src="{{users.avatar_url}}">
        </div>
    </div> 
 </div>
+<br>
 <!-- Repositories -->
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h3>User Repositories:</h3>
+            <h3>Repositories:</h3>
          <table class="table">
-     <!-- <tr *ngFor='let repositories of repos '>
+      <!-- <tr *ngFor='let repositories of repos '>
 
-      </tr> -->
-          <a href="{{repos.html_url}}" target="_blank">{{repos.name}}</a>
+      </tr>-->
+          <a href="{{repos.html_url}}" target="_blank">{{repos.name}}</a> 
           <br>
           <p >Description: {{repos.description}}</p>
           <br>
           <p >Date Created: {{repos.created_at}}</p>
-          
+           
          </table>  
         
         
-
         </div>
+      
     </div>
 </div>
 

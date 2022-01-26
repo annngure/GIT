@@ -8,17 +8,21 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { UserService } from './search-service/user.service';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     RepositoryComponent,
+    SearchFormComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
     // NgProgressModule.forRoot(),
     // NgProgressHttpClientModule
   ],
